@@ -1,5 +1,5 @@
 <#
-  Phase 1 — Read-only diagnostika (Portable Ubuntu SSD loyihasi)
+  Phase 1 - Read-only diagnostika (Portable Ubuntu SSD loyihasi)
 
   BU SKRIPT HECH NARSANI O'ZGARTIRMAYDI:
     - disk/partition/format/boot sozlamalariga tegmaydi;
@@ -31,7 +31,7 @@ function Out-Report {
 
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(
     [Security.Principal.WindowsBuiltInRole]::Administrator)
-"Phase 1 diagnostika — $(Get-Date)" | Out-File -FilePath $report -Encoding utf8
+"Phase 1 diagnostika - $(Get-Date)" | Out-File -FilePath $report -Encoding utf8
 "Administrator: $isAdmin" | Tee-Object -FilePath $report -Append
 if (-not $isAdmin) {
     Write-Warning "Administrator emas: Secure Boot, TPM va BitLocker natijalari to'liq bo'lmaydi."
@@ -41,7 +41,7 @@ if (-not $isAdmin) {
 Section '1. WINDOWS VERSION'
 $cv = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion'
 [pscustomobject]@{
-    ProductName    = $cv.ProductName      # Win11 da ham ba'zan "Windows 10" ko'rsatadi — build raqamiga qarang
+    ProductName    = $cv.ProductName      # Win11 da ham ba'zan "Windows 10" ko'rsatadi - build raqamiga qarang
     EditionID      = $cv.EditionID
     DisplayVersion = $cv.DisplayVersion
     Build          = "$($cv.CurrentBuild).$($cv.UBR)"
@@ -139,7 +139,7 @@ bcdedit /enum firmware 2>&1 | Out-String | Tee-Object -FilePath $report -Append
 Section '9. VENTOY / EXTERNAL DATA INVENTORY'
 $ventoy = Get-Volume | Where-Object { $_.FileSystemLabel -match 'Ventoy' -and $_.DriveLetter }
 if (-not $ventoy) {
-    "Ventoy label'li volume topilmadi. Tashqi SSD ulanganmi? Label boshqacha bo'lishi mumkin — 6-bo'limga qarang." |
+    "Ventoy label'li volume topilmadi. Tashqi SSD ulanganmi? Label boshqacha bo'lishi mumkin - 6-bo'limga qarang." |
         Tee-Object -FilePath $report -Append
 }
 foreach ($v in $ventoy) {
