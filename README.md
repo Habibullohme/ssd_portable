@@ -11,7 +11,7 @@ Asosiy laptop: HP ProBook x360 435 G8 (Windows 11 21H2 saqlanadi).
 | 1 | Read-only diagnostika (`phase1/diagnostics.ps1`) | Kutilmoqda — natijalar yo'q |
 | 2 | Backup rejasi va tekshiruvi | Boshlanmagan |
 | 3 | Windows yangilash rejasi (BitLocker key backup) | Boshlanmagan |
-| 4 | Installer usulini tanlash (A/B/C) | Boshlanmagan |
+| 4 | Installer usuli: VirtualBox raw-disk (`phase2/virtualbox-plan.md`) | Reja tayyor, bajarilmagan |
 | 5 | Partition rejasi | Boshlanmagan |
 | 6 | Ubuntu o'rnatish + mustaqil EFI (`EFI/BOOT/BOOTX64.EFI`) | Boshlanmagan |
 | 7 | Portability testlari (A–E) | Boshlanmagan |
